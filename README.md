@@ -1,0 +1,2 @@
+# text-prepocessing
+文本预处理包括分词、标注词性、对（屈折变化性词类）进行归类分析（lemmatization）、去除停用词，根据本项目需要，还需要去除中文及中文符号。 首先，输入一个txt文件，转化为string类型，并新建一个空数组等待放置词汇。英文分词较为简单，只需要根据空格进行分词即可。 将英文单词进行词干提取，在比较了Lancaster Stemmer、Porter Stemmer、Word Net Lemmatizer方法后，认为Lemmatize可以更好的还原 词汇本身，因此选择Lemmatization方法。由于调用的WordNetLemmatizer模块需要输入词汇原型以及词汇的类型信息，我们需要先 对词汇进行词性标注。获取原型词汇&amp;词性的二维数组后，去除词汇中的停用词。由于我们的目标是分析雅思阅读词汇， 在OCR产生的脏txt数据中可能包含中文（如首尾页的说明、绪论等），我们还需要去除中文及中文词汇。
